@@ -1,7 +1,7 @@
 FROM ubuntu
 ENV TZ=US \
     DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y software-properties-common zlib1g
+RUN apt update && apt install -y software-properties-common zlib1g unzip
 RUN apt upgrade -y
 RUN add-apt-repository ppa:ondrej/php && apt update
 RUN apt install -y wget curl php8.2
