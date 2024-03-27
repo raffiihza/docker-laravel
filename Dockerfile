@@ -1,4 +1,6 @@
 FROM ubuntu
+ENV TZ=US \
+    DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y software-properties-common
 RUN apt upgrade -y
 RUN add-apt-repository ppa:ondrej/php && apt update
