@@ -1,0 +1,16 @@
+name: Build and Push Docker Image
+
+on:
+  workflow_dispatch:  # This event triggers the workflow manually
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Try
+      run: |
+        docker build -t laravel .
