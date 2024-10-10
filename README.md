@@ -3,7 +3,7 @@
 This is a Docker image for deploying Laravel easily to PaaS (platform-as-a-service) for my own usage. This image includes MySQL, Postgres, and SQLite for databases.
 
 1. Github repo: https://github.com/raffiihza/docker-laravel
-2. Docker Hub repo: https://hub.docker.com/repository/docker/raffiihza/docker-laravel
+2. Docker Hub repo: https://hub.docker.com/r/raffiihza/docker-laravel
 
 ## How to use
 1. This method is intended for a private Laravel repository with `.env` included. Make sure that the repository uses an external database (or SQLite, but it's not recommended when using ephemeral storage) and can be run on your local machine before proceeding. If you insist on using a public repository, clone it to a private one or adjust it accordingly (it may need many adjustments though).
