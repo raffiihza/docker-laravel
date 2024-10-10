@@ -1,4 +1,4 @@
-# docker-laravel
+# docker-laravel (Experimental)
 
 This is a Docker image for deploying Laravel easily to PaaS (platform-as-a-service) for my own usage. This image includes Node.js (NPM), MySQL, Postgres, and SQLite.
 
@@ -11,6 +11,7 @@ This is a Docker image for deploying Laravel easily to PaaS (platform-as-a-servi
 ```
 FROM raffiihza/docker-laravel
 
+WORKDIR /usr/app
 COPY . .
 
 RUN composer install && npm install && npm run build
@@ -25,6 +26,7 @@ CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 ```
 FROM raffiihza/docker-laravel
 
+WORKDIR /usr/app
 COPY . .
 
 RUN composer install && npm install && npm run build
@@ -33,7 +35,7 @@ RUN composer install && npm install && npm run build
 ENV APP_ENV=local
 ## Optional if you want to use some variables from the .env.example file without adding them manually to environment variables
 # RUN cp .env.example .env
-## Optional if you don't want to add APP_KEY env var manually
+## Optional if you don't want to add APP_KEY env var manually (this needs the RUN command above to work properly)
 # RUN php artisan key:generate
 ## Optional if you want to use local SQLite
 # RUN php artisan migrate -q
