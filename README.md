@@ -14,7 +14,7 @@ FROM raffiihza/docker-laravel
 COPY . .
 
 RUN composer install
-CMD php artisan serve --host=0.0.0.0 --port=8080
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 ```
 3. Use the repository as a deployment source in your preferred PaaS.
 4. After deployed, add `APP_URL` environment variable and fill it with your app URL.
