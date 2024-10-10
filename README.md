@@ -1,6 +1,6 @@
 # docker-laravel
 
-This is a Docker image for deploying Laravel easily to PaaS (platform-as-a-service) for my own usage. This image includes MySQL, Postgres, and SQLite for databases.
+This is a Docker image for deploying Laravel easily to PaaS (platform-as-a-service) for my own usage. This image includes Node.js (NPM), MySQL, Postgres, and SQLite.
 
 1. Github repo: https://github.com/raffiihza/docker-laravel
 2. Docker Hub repo: https://hub.docker.com/r/raffiihza/docker-laravel
