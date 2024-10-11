@@ -15,6 +15,8 @@ WORKDIR /usr/app
 COPY . .
 
 RUN composer install && npm install && npm run build
+
+EXPOSE 8080
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 ```
 3. Use the repository as a deployment source in your preferred PaaS.
@@ -42,6 +44,7 @@ ENV APP_ENV=local
 ## Optional if you need a new storage link
 # RUN php artisan storage:link
 
+EXPOSE 8080
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 ```
 3. Use the repository as a deployment source in your preferred PaaS.
