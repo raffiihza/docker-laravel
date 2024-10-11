@@ -7,7 +7,8 @@ This is a Docker image for deploying Laravel easily to PaaS (platform-as-a-servi
 
 ## How to use for private repositories (easier)
 1. This method is intended for a private Laravel repository with `.env` included. Make sure that the repository uses an external database (or SQLite, but it's not recommended when using ephemeral storage) and can be run on your local machine before proceeding. If you insist on using a public repository or do not want to store `.env` in your repository, see the methods way below.
-2. Create Dockerfile in your Laravel repository and change the port accordingly.
+2. If you use an external database and you haven't migrated the database, run `php artisan migrate` locally first.
+3. Create Dockerfile in your Laravel repository and change the port accordingly.
 ```
 FROM raffiihza/docker-laravel
 
@@ -24,7 +25,8 @@ CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 
 ## How to use for public repositories or repositories without `.env` file (more complicated)
 1. This method is intended for a Laravel repository without `.env` included. You will need to modify Dockerfile as per your requirements and set environment variables manually on the PaaS you're using.
-2. Create Dockerfile in your Laravel repository (change the port accordingly).
+2. If you use an external database and you haven't migrated the database, run `php artisan migrate` locally first.
+3. Create Dockerfile in your Laravel repository, modify the commands, and change the port accordingly.
 ```
 FROM raffiihza/docker-laravel
 
